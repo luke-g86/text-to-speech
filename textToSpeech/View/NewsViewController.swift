@@ -13,14 +13,18 @@ class NewsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var articles: [Articles] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setNavBar()
+        let newsViewModel = NewsViewModel(delegate: self)
+        newsViewModel.fetchArticles()
         setTableView()
+       
     }
-
     
     func setTableView() {
         tableView.delegate = self
@@ -47,34 +51,29 @@ class NewsViewController: UIViewController {
 
 }
 
-extension NewsViewController: UITextFieldDelegate {
-//
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        textField.text = nil
-//        return true
-//    }
-//
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        textField.resignFirstResponder()
-//    }
-//
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        if textField.hasText {
-//        textToSpeech()
-//        }
-//        return true
-//
-//    }
-}
+
 
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return articles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         <#code#>
+    }
+    
+}
+
+extension NewsViewController: NewsViewModelDelegate {
+    func fetchedData(with articles: [Articles]?) {
+        guard let data = articles else {
+            return
+        }
+        self.articles = data
+    }
+    
+    func fetchFailed(error reason: String) {
+        print(print(reason))
     }
     
     

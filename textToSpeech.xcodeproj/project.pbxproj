@@ -14,6 +14,7 @@
 		A301888D2333B14600270412 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301888C2333B14600270412 /* HTTPURLResponse.swift */; };
 		A301888F2333BDF100270412 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A301888E2333BDF100270412 /* Result.swift */; };
 		A30188932333C02300270412 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30188922333C02300270412 /* NewsViewModel.swift */; };
+		A30188972333F83E00270412 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30188962333F83E00270412 /* CustomTableViewCell.swift */; };
 		A3A77A7E232E7B1200608996 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A77A7D232E7B1200608996 /* AppDelegate.swift */; };
 		A3A77A80232E7B1200608996 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A77A7F232E7B1200608996 /* NewsViewController.swift */; };
 		A3A77A83232E7B1200608996 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A77A81232E7B1200608996 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		A301888C2333B14600270412 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
 		A301888E2333BDF100270412 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		A30188922333C02300270412 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		A30188962333F83E00270412 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A3A77A7A232E7B1200608996 /* textToSpeech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = textToSpeech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A77A7D232E7B1200608996 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3A77A7F232E7B1200608996 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				A3A77A7F232E7B1200608996 /* NewsViewController.swift */,
+				A30188962333F83E00270412 /* CustomTableViewCell.swift */,
 				A3A77A81232E7B1200608996 /* Main.storyboard */,
 			);
 			path = View;
@@ -314,6 +317,7 @@
 			files = (
 				A301888F2333BDF100270412 /* Result.swift in Sources */,
 				A301888B2333B05300270412 /* Articles.swift in Sources */,
+				A30188972333F83E00270412 /* CustomTableViewCell.swift in Sources */,
 				A30188862333AE2F00270412 /* DataError.swift in Sources */,
 				A301888D2333B14600270412 /* HTTPURLResponse.swift in Sources */,
 				A30188822333AD1B00270412 /* APIConnection.swift in Sources */,
