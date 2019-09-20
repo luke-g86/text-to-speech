@@ -12,15 +12,15 @@ struct Articles: Codable {
     
     let source: Source?
     let author: String?
-    let title: String
-    let urlToImage: String
-    let publishedAt: String
-    let content: String
+    let title: String?
+    let urlToImage: String?
+    let publishedAt: String?
+    let content: String?
     
 }
 
 
 struct Source: Codable {
-    let id: String
-    let name: String
+    let id: String?
+    let name: String?
 }

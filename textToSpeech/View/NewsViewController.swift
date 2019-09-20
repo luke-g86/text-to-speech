@@ -23,10 +23,12 @@ class NewsViewController: UIViewController {
         let newsViewModel = NewsViewModel(delegate: self)
         newsViewModel.fetchArticles()
         setTableView()
+        
        
     }
     
     func setTableView() {
+         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
     }
     
@@ -59,7 +61,29 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+    
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
+    
+        cell.articleTitle.text = articles[indexPath.row].title
+        cell.articleBody.text = articles[indexPath.row].content
+    
+        if let urlToImage = articles[indexPath.row].urlToImage {
+        let url = URL(string: urlToImage)
+            APIConnection.downloadThumbnail(imageURL: url!) { (data, error) in
+                guard let data = data else {
+                    print(error?.localizedDescription)
+                    return
+            }
+                cell.newsThumbnail.image = UIImage(data: data)
+        }
+       
+        }
+     
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
 }
@@ -70,6 +94,8 @@ extension NewsViewController: NewsViewModelDelegate {
             return
         }
         self.articles = data
+        tableView.reloadData()
+        
     }
     
     func fetchFailed(error reason: String) {
