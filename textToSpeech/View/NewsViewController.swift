@@ -64,6 +64,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
     
+        cell.sourceName.text = articles[indexPath.row].source?.name
         cell.articleTitle.text = articles[indexPath.row].title
         cell.articleBody.text = articles[indexPath.row].content
     
