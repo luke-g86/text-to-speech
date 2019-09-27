@@ -23,6 +23,7 @@
 		A3A77A93232E7B1700608996 /* textToSpeechTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A77A92232E7B1700608996 /* textToSpeechTests.swift */; };
 		A3A77A9E232E7B1700608996 /* textToSpeechUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A77A9D232E7B1700608996 /* textToSpeechUITests.swift */; };
 		A3A77AAC232E7EB300608996 /* TextToSpeech.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A77AAB232E7EB300608996 /* TextToSpeech.swift */; };
+		A3C18A6595C7498F5C860B01 /* Pods_textToSpeech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FD27B0C995E69B566147F95 /* Pods_textToSpeech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		460C1802A1694E418D0316B9 /* Pods-textToSpeech.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textToSpeech.debug.xcconfig"; path = "Target Support Files/Pods-textToSpeech/Pods-textToSpeech.debug.xcconfig"; sourceTree = "<group>"; };
+		8FD27B0C995E69B566147F95 /* Pods_textToSpeech.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_textToSpeech.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30188812333AD1B00270412 /* APIConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConnection.swift; sourceTree = "<group>"; };
 		A30188852333AE2F00270412 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		A30188882333AEDB00270412 /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		A3A77A9D232E7B1700608996 /* textToSpeechUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = textToSpeechUITests.swift; sourceTree = "<group>"; };
 		A3A77A9F232E7B1700608996 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3A77AAB232E7EB300608996 /* TextToSpeech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeech.swift; sourceTree = "<group>"; };
+		A5EE518B775B6AD0F0F862F3 /* Pods-textToSpeech.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-textToSpeech.release.xcconfig"; path = "Target Support Files/Pods-textToSpeech/Pods-textToSpeech.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C18A6595C7498F5C860B01 /* Pods_textToSpeech.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +97,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		219015A71C0E6E1761D55697 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				460C1802A1694E418D0316B9 /* Pods-textToSpeech.debug.xcconfig */,
+				A5EE518B775B6AD0F0F862F3 /* Pods-textToSpeech.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		468A3D0E12D4D5D312647FCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FD27B0C995E69B566147F95 /* Pods_textToSpeech.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A30188802333AD0F00270412 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +162,8 @@
 				A3A77A91232E7B1700608996 /* textToSpeechTests */,
 				A3A77A9C232E7B1700608996 /* textToSpeechUITests */,
 				A3A77A7B232E7B1200608996 /* Products */,
+				219015A71C0E6E1761D55697 /* Pods */,
+				468A3D0E12D4D5D312647FCE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A3A77AA2232E7B1700608996 /* Build configuration list for PBXNativeTarget "textToSpeech" */;
 			buildPhases = (
+				7D321EED31EE943C393FD6EC /* [CP] Check Pods Manifest.lock */,
 				A3A77A76232E7B1200608996 /* Sources */,
 				A3A77A77232E7B1200608996 /* Frameworks */,
 				A3A77A78232E7B1200608996 /* Resources */,
+				C2FFDFE6B6C1A04EC0130D90 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +336,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D321EED31EE943C393FD6EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-textToSpeech-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2FFDFE6B6C1A04EC0130D90 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-textToSpeech/Pods-textToSpeech-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-textToSpeech/Pods-textToSpeech-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-textToSpeech/Pods-textToSpeech-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A3A77A76232E7B1200608996 /* Sources */ = {
@@ -498,6 +567,7 @@
 		};
 		A3A77AA3232E7B1700608996 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 460C1802A1694E418D0316B9 /* Pods-textToSpeech.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,6 +586,7 @@
 		};
 		A3A77AA4232E7B1700608996 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5EE518B775B6AD0F0F862F3 /* Pods-textToSpeech.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
