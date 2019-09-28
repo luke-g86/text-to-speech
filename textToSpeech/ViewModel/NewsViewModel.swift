@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 protocol NewsViewModelDelegate: class {
     func fetchedData(with articles: [Articles]?)
@@ -17,8 +19,10 @@ class NewsViewModel {
     
     private weak var delegate: NewsViewModelDelegate?
     var articles: [Articles] = []
+    let disposeBag = DisposeBag()
+    let news: BehaviorRelay<[Articles]> = BehaviorRelay(value: [])
     
-    init(delegate: NewsViewModelDelegate) {
+    init(delegate: NewsViewModelDelegate?) {
         self.delegate = delegate
     }
     
@@ -33,7 +37,8 @@ class NewsViewModel {
                 }
             case .success(let response):
                 DispatchQueue.main.async {
-                    self.articles = response.articles
+                    
+                    self.news.accept(response.articles)
                     self.delegate?.fetchedData(with: self.articles)
                 }
             }
