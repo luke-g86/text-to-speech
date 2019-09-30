@@ -17,14 +17,8 @@ protocol NewsViewModelDelegate: class {
 
 class NewsViewModel {
     
-    private weak var delegate: NewsViewModelDelegate?
-    var articles: [Articles] = []
     let disposeBag = DisposeBag()
     let news: BehaviorRelay<[Articles]> = BehaviorRelay(value: [])
-    
-    init(delegate: NewsViewModelDelegate?) {
-        self.delegate = delegate
-    }
     
     func fetchArticles() {
         
@@ -32,14 +26,14 @@ class NewsViewModel {
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
-                    self.delegate?.fetchFailed(error: error.details)
+                    
                     print(error.localizedDescription)
                 }
             case .success(let response):
                 DispatchQueue.main.async {
                     
                     self.news.accept(response.articles)
-                    self.delegate?.fetchedData(with: self.articles)
+                    
                 }
             }
         }

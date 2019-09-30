@@ -11,7 +11,7 @@
         <!--News View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewsViewController" customModule="textToSpeech" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsViewList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="NewsViewController" customModule="textToSpeech" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,11 +43,22 @@
                     <navigationItem key="navigationItem" id="SiH-La-Fwe"/>
                     <connections>
                         <outlet property="tableView" destination="rJ1-P1-8Y7" id="uDP-WJ-bGB"/>
+                        <segue destination="sN0-cm-gmN" kind="show" identifier="showDetails" id="rAm-tK-Lqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2862.3188405797105" y="137.94642857142856"/>
+        </scene>
+        <!--ArticleViewController-->
+        <scene sceneID="qqP-in-OCw">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="ArticleViewController" storyboardName="ArticleDetails" referencedIdentifier="ArticleViewController" id="sN0-cm-gmN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OdD-YY-7SQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r1C-c6-wbj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3531" y="149"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="iDQ-bn-4nN">

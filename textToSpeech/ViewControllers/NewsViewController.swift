@@ -16,7 +16,7 @@ class NewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var articles: [Articles] = []
-    let viewModel: NewsViewModel = NewsViewModel(delegate: nil)
+    let viewModel: NewsViewModel = NewsViewModel()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -24,12 +24,10 @@ class NewsViewController: UIViewController {
         
         
         setNavBar()
-//        let newsViewModel = NewsViewModel(delegate: self)
-//        newsViewModel.fetchArticles()
         viewModel.fetchArticles()
         setTableView()
         setTable()
-        print(viewModel.news.value)
+        cellTapHandling()
     }
     
     func setTable() {
@@ -52,7 +50,26 @@ class NewsViewController: UIViewController {
                 }
         }
         .disposed(by: disposeBag)
-        
+    }
+    
+    func cellTapHandling() {
+        tableView
+        .rx
+            .modelSelected(Articles.self)
+            .subscribe(onNext: { [weak self] article in
+            
+                guard let strongSelf = self else { return }
+                
+                guard let articleDetailsVC = strongSelf.storyboard?.instantiateViewController(withIdentifier: "ArticleViewController") as? ArticleDetailsViewController else {
+                    fatalError("Article Details Controller not found")
+                }
+                print(article.title)
+                guard let title = article.title, let body = article.content else { return }
+                articleDetailsVC.articleTitle.text = title
+                articleDetailsVC.articleBody.text = body
+                
+                strongSelf.navigationController?.pushViewController(articleDetailsVC, animated: true)
+            }).disposed(by: disposeBag)
     }
     
     func setTableView() {
@@ -64,21 +81,6 @@ class NewsViewController: UIViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.title = "News for you"
     }
-    
-    //    func textToSpeech() {
-    //        guard let text = textField.text else {return}
-    //        let speak = TextToSpeech.init(textToBeSaid: text)
-    //        speak.speak()
-    //    }
-    
-    //    func setButton() {
-    //        button.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
-    //        button.setTitleColor(UIColor.white, for: .normal)
-    //        button.layer.cornerRadius = 4
-    //    }
-    
-    
-    
 }
 
 
@@ -104,7 +106,6 @@ extension NewsViewController: NewsViewModelDelegate {
     func fetchFailed(error reason: String) {
         print(print(reason))
     }
-    
-    
+
 }
 
